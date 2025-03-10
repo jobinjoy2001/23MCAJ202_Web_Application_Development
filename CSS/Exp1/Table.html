@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form in Table</title>
+    <link rel="stylesheet" href="stylesTable.css">
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault();
+            alert("Successfully registered as a Madridista!");
+        }
+    </script> 
+</head>
+<body>
+
+<form onsubmit="showSuccessMessage(event)">
+    <table>
+        <tr class="header-row">
+            <th colspan="2">Sign-in for Club Membership</th>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <td><input type="text"></td>
+        </tr>
+
+        <tr>
+            <th>Age</th>
+            <td><input type="date"></td>
+        </tr>
+
+        <tr>
+            <th>Mobile No.</th>
+            <td><input type="number"></td>
+        </tr>
+
+        <tr>
+            <th>Email</th>
+            <td><input type="email"></td>
+        </tr>
+
+        <tr>
+            <th>Gender</th>
+            <td>
+                <div class="gender-container">
+                    <label><input type="radio" name="gender"> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                </div>
+            </td>
+        </tr>        
+
+        <tr>
+            <th>Country</th>
+            <td>
+                <select name="city">
+                    <option value="India">India</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Portugal">Portugal</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr class="footer-row">
+            <th colspan="2">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </th>
+        </tr>
+    </table>
+</form>
+    <a href="main.html" target="_self" style="color: aliceblue;">Home page</a> |
+    <a href="image.html" target="_self" style="color:aliceblue;">Team</a>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #170202;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgb(143, 240, 242);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .gender-opt {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <h2>REGISTRATION FORM</h2>
+            
+            <label for="fname">First name</label>
+            <input type="text" id="fname" placeholder="Enter your first name" name="fname" required>
+
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" placeholder="Enter your last name" name="lname" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" name="password" required>
+
+            <label>Gender</label>
+            <div class="gender-opt">
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="others" required> Others</label>
+            </div>
+
+            <label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob" required>
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+
+            <label for="country">Country</label>
+            <select name="country" id="country" required>
+                <option value="">Select a country</option>
+                <option value="india" selected>India</option>
+                <option value="finland">Finland</option>
+                <option value="greenland">Greenland</option>
+                <option value="scotland">Scotland</option>
+            </select>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>
