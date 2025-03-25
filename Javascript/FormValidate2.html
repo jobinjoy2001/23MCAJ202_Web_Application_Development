@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: antiquewhite;
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #0c0c0c;
+            border-radius: 5px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #040303;
+            border-radius: 3px;
+            width: 100%;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+        button {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #34abaf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Register</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <span id="nError" class="error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                <span id="eError" class="error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <span id="pError" class="error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <span id="cpassError" class="error"></span>
+            </div>
+            
+            <button type="button" onclick="validateForm()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Reset error messages
+            document.getElementById("nError").innerText = "";
+            document.getElementById("eError").innerText = "";
+            document.getElementById("pError").innerText = "";
+            document.getElementById("cpassError").innerText = "";
+
+            if (name === "") {
+                document.getElementById("nError").innerText = "Name is required";
+                isValid = false;
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("eError").innerText = "Invalid email address";
+                isValid = false;
+            }
+
+            if (password.length < 7) {
+                document.getElementById("pError").innerText = "Password must be at least 7 characters long";
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                document.getElementById("cpassError").innerText = "Passwords do not match";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Registration successful!");
+            }
+        }
+    </script>
+</body>
+</html>

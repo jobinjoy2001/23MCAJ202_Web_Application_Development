@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover to Change Image & Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #07e2f1;
+            padding-top: 50px;
+        }
+        .container {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #f9f6f6;
+            border-radius: 10px;
+            background-color: rgb(107, 147, 135);
+            transition: 0.3s;
+        }
+        img {
+            width: 400px;
+            height: auto;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        h2 {
+            color: #0d0d0d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" onmouseover="changeContent()" onmouseout="restoreContent()">
+        <h2 id="text">Come lets hover over me!</h2>
+        <img id="image" src="image1.jpg" alt="Original Image">
+    </div>
+
+    <script>
+        function changeContent() {
+            document.getElementById("text").innerText = "Oh , you believed me!";
+            document.getElementById("image").src = "image4.jpg";
+        }
+
+        function restoreContent() {
+            document.getElementById("text").innerText = "Come lets hover over me!";
+            document.getElementById("image").src = "image1.jpg";
+        }
+    </script>
+
+</body>
+</html>
